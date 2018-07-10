@@ -5,6 +5,13 @@ function [sigmas, allCenters, outliers] = estimatePSFRange(img, res, radius, N, 
 %   allCenters is a cell array containing the centers for each slice
 %   outliers is a logical vector marking outliers of sigmas
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
+
 if isempty(varargin)
     centers = zeros(N, 2);
     

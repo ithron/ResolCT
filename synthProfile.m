@@ -9,6 +9,12 @@ function [Y, S] = synthProfile(R, r, mu, sigma, g)
 %   Returns the mean functions in Y and the standard deviation function in
 %   S.
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
 Y = mu(1) * ones(size(R));
 S = zeros(size(R));
 

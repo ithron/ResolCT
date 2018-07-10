@@ -9,6 +9,12 @@ function d = distanceToSynthProfile(V, t, theta, mu, sigma, r, offset, g)
 %   containing estimating offsets to the origin of the radial profiles,
 %   g is the PSF scale (see synthProfile).
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
 R = offsetRadii(offset, t, theta);
 [SynMu, SynSigma] = synthProfile(R, r, mu, sigma, g);
 

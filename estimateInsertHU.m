@@ -9,6 +9,13 @@ function [muInsert, sigmaInsert, muBG, sigmaBG] = estimateInsertHU(Y)
 %   distribution of the HU of the insert, while muBG and sigmaBG are the
 %   parameters of the background HU distribution.
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
+
 % filter out any NaNs
 y = Y(isfinite(Y));
 

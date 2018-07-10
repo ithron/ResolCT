@@ -14,6 +14,13 @@ function [sigmaG, centers] = estimatePSF(img, res, radius, N, varargin)
 %   [sigmaG, centers] = estimatePSF(img, red, radius, N, centers)
 %   Additionaly specify the centers of the inserts in centers.
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
+
 if isempty(varargin)
     centers = zeros(N, 2);
     

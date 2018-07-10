@@ -4,6 +4,12 @@ function displayResults(img, radius, centers, sigmaG)
 %   estimatePSF using image img and radius radius. centers and sigmaG are
 %   the outputs of estimatePSF.
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
 clf;
 imagesc(img), axis equal, colormap gray;
 hold on

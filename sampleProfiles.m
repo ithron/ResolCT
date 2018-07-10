@@ -13,6 +13,13 @@ function Y = sampleProfiles(img, center, radii, angles, varargin)
 %   Each row of Y represents a profile at the corresponding angle in
 %   angles.
 
+% Copyright (C) 2018 Stefan Reinhold -- All Rights Reserved
+% You may use, distribute and modify this code under the terms of the
+% AFL 3.0 license.
+%
+% See LICENSE for full license details.
+
+
 [XI, YI] = meshgrid(1:size(img, 2), 1:size(img, 1));
 
 Xq = kron(cos(angles)', radii) + center(1);
