@@ -1,4 +1,4 @@
-function displayResults(img, radius, centers, sigmaG)
+function displayResults(img, res, radius, centers, sigmaG)
 %DISPLAYRESULTS Visualizes the results of estimatePSF.
 %   displayResults(img, radius, centers, sigmaG) visualizes the result of
 %   estimatePSF using image img and radius radius. centers and sigmaG are
@@ -16,8 +16,8 @@ hold on
 
 angles = linspace(0, 2 * pi, 360);
 
-xCircBase = radius * cos(angles);
-yCircBase = radius * sin(angles);
+xCircBase = radius / res(1) * cos(angles);
+yCircBase = radius  / res(2) * sin(angles);
 
 for ii=1:size(centers, 1)
    
@@ -33,7 +33,8 @@ hold off;
 fprintf('Press any key to continue\n');
 pause
 
-r = 0.5:1.5*radius;
+minRes = min(res(1:2));
+r = 0.5:1.5*radius/minRes;
 
 Y = [];
 
@@ -47,9 +48,13 @@ for ii=1:size(centers, 2)
     sigma = zeros(1, 2);
     [mu(1), sigma(1), mu(2), sigma(2)] = estimateInsertHU(y);
     
-    [muZ, sigmaZ] = synthProfile(r, radius, mu, sigma, sigmaG);
+    [muZ, sigmaZ] = synthProfile(r, radius/minRes, mu, sigma, sigmaG);
     
-    plot(r, y, '.k', r, muZ, 'm-', r, muZ - 2 * sigmaZ, '--m', r, muZ + 2 * sigmaZ, '--m', 'LineWidth', 2);
+    plot(...
+        r*minRes, y, '.k', ...
+        r*minRes, muZ, 'm-', ...
+        r*minRes, muZ - 2 * sigmaZ, '--m', ...
+        r*minRes, muZ + 2 * sigmaZ, '--m', 'LineWidth', 2);
     ylim([mu(2) - 3 * sigma(2), mu(1) + 3 * sigma(1)]);
 end
 
