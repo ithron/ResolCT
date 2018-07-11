@@ -1,0 +1,104 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="/data2/sreinhold/src/ResolCT/ResolCT.prj" location="/data2/sreinhold/src/ResolCT" name="ResolCT" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>ResolCT</param.appname>
+    <param.authnamewatermark>Stefan Reinhold</param.authnamewatermark>
+    <param.email>sre@informatik.uni-kiel.de</param.email>
+    <param.company>Kiel Univerisy</param.company>
+    <param.summary>A MATLAB toolbox to estimate in-plane point spread function of QCT scans from calibration phantom inserts.</param.summary>
+    <param.description>A MATLAB toolbox to estimate in-plane point spread function of QCT scans from calibration phantom inserts.
+
+The traditional way to measure the in-plane point spread function (PSF) of a CT is by scanning a special phantom. The resulting images are then deconvolved to obtain the PSF. However, doing such extra scans is tedious task and not always possible. Luckily, in QCT a calibration phantom is simultaneously scanned with the patient. So in each QCT scan there is a phantom with known geometry that can be used for PSF estimation.
+
+ResolCT is based on a method called Analysis by Synthesis (AbS). In AbS we do not analyze the image directly, but instead synthesize images from a model and find the model parameters for which the synthetic and the input image match best. In the case of this toolbox, the model is a circular slice of an QCT calibration phantom insert. The imaging system is approximated by a convolution with a gaussan PSF with unknown scale sigma. First radial 1D profiles of an insert in the image are sampled. Since the geometry of the inserts is known, the ideal profiles for a given sigma can be computed and compared to the samples from the input image. The optimal parameters are then found by minimization of the negative log likelihood function of the model parameters given the image.</param.description>
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.output>${PROJECT_ROOT}/ResolCT.mltbx</param.output>
+    <param.products.name>
+      <item>MATLAB</item>
+      <item>Optimization Toolbox</item>
+      <item>Statistics and Machine Learning Toolbox</item>
+    </param.products.name>
+    <param.products.id>
+      <item>1</item>
+      <item>6</item>
+      <item>19</item>
+    </param.products.id>
+    <param.products.version>
+      <item>9.3</item>
+      <item>8.0</item>
+      <item>11.2</item>
+    </param.products.version>
+    <param.platforms />
+    <param.guid>6f51e6f6-947c-49d4-98f8-ec66a72fa745</param.guid>
+    <param.exclude.filters />
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.registered.apps />
+    <param.docs />
+    <param.getting.started.guide>${PROJECT_ROOT}/toolbox/doc/GettingStarted.mlx</param.getting.started.guide>
+    <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <unset>
+      <param.screenshot />
+      <param.version />
+      <param.output />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.registered.apps />
+      <param.docs />
+      <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+    </unset>
+    <fileset.rootdir>
+      <file>${PROJECT_ROOT}/toolbox</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}/toolbox/displayResults.m</file>
+      <file>${PROJECT_ROOT}/toolbox/distanceToSynthProfile.m</file>
+      <file>${PROJECT_ROOT}/toolbox/doc</file>
+      <file>${PROJECT_ROOT}/toolbox/estimateInsertHU.m</file>
+      <file>${PROJECT_ROOT}/toolbox/estimatePSF.m</file>
+      <file>${PROJECT_ROOT}/toolbox/estimatePSFRange.m</file>
+      <file>${PROJECT_ROOT}/toolbox/offsetRadii.m</file>
+      <file>${PROJECT_ROOT}/toolbox/sampleProfiles.m</file>
+      <file>${PROJECT_ROOT}/toolbox/synthProfile.m</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="/data2/sreinhold/src/ResolCT" name="ResolCT.mltbx" optional="false">/data2/sreinhold/src/ResolCT/ResolCT.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/opt/net64/matlab</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>false</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>true</linux>
+      <solaris>false</solaris>
+      <osver>4.13.0-45-generic</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>glnxa64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
