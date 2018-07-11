@@ -16,6 +16,11 @@ First radial 1D profiles of an insert in the image are sampled. Since the geomet
 Clone this repository or download [ResolCT.mltbx](https://github.com/ithron/ResolCT/raw/master/ResolCT.mltbx).
 Open MATLAB and double click *ResolCT.mltbx* to install the toolbox.
 
+### Dependencies
+ResolCT requires the following MATLAB toolboxes:
+- Statistics and Machine Learning Toolbox
+- Optimization Toolbox
+
 ## Usage
 First load your QCT scan into a MATLAB 3D-matrix. Suppose your scan resides in `image` and the resolution of the scan in stores in `resolution`.
 The PSF estimation functions need two additional parameters: the insert radius `radius` and the number of inserts `N` to use for the estimation.
