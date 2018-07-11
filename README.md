@@ -65,6 +65,17 @@ overallSigma = mean(sigmas(~outliers));
 #### Non-interactive
 The same as for the single slice case: just add the centers for any slice as the last parameter.
 
+## Display Results
+
+To display the results the `displayResults` functions can be used:
+```matlab
+displayResults(centerSlice, resolution, radius, centers, sigma);
+```
+where `centers` and `sigma` are the results from `estimatePSF`.
+The functions shows two figures: the first one overlays `centerSlice` with circles for each insert.
+This way it is conventent to verify that the inserts were detected corretly.
+The second figure plot all profiles sampled from an insert together with the mean and the 95% confidence interval of the fitted synthetic profile:
+
 ## Lincense
 You may use, distribute and modify this software under the terms of the Academic Free License 3.0 (AFL 3.0).
 See [LICENSE](https://raw.githubusercontent.com/ithron/ResolCT/master/LICENSE) for full license details.
