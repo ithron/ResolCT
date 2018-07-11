@@ -2,7 +2,7 @@
 A MATLAB toolbox to estimate in-plane point spread function of QCT scans from calibration phantom inserts.
 
 ## Motivation
-The traditional way to measure the in-plane point spread function (PSF) of a CT is by scanning a special phantom. The resulting images are then deconvolved to obtain the PSF \[[1](#Ref1)\]. However, doing such extra scans is tedious task and not always possible.
+The traditional way to measure the in-plane point spread function (PSF) of a CT is by scanning a special phantom. The resulting images are then deconvolved to obtain the PSF \[[1](#references)\]. However, doing such extra scans is tedious task and not always possible.
 Luckily, in QCT a calibration phantom is simultaneously scanned with the patient. So in each QCT scan there is a phantom with known geometry that can be used for PSF estimation.
 
 ## Method
@@ -59,3 +59,7 @@ overallSigma = mean(sigmas(~outliers));
 
 #### Non-interactive
 The same as for the single slice case: just add the centers for any slice as the last parameter.
+
+## References
+
+\[1\]	[Ohkubo M, Wada S, Ida S, Kunii M, Kayugawa A, Matsumoto T, et al. Determination of point spread function in computed tomography accompanied with verification. Medical Physics. 2009 Jun;36(6):2089–97](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1118/1.3123762)
