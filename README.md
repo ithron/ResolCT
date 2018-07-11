@@ -75,6 +75,10 @@ where `centers` and `sigma` are the results from `estimatePSF`.
 The functions shows two figures: the first one overlays `centerSlice` with circles for each insert.
 This way it is conventent to verify that the inserts were detected corretly.
 The second figure plot all profiles sampled from an insert together with the mean and the 95% confidence interval of the fitted synthetic profile:
+<p style="width: 100%">
+<a href="https://github.com/ithron/ResolCT/raw/master/images/displayResult-1.png"><img alt="First figure of displayResults" src="https://github.com/ithron/ResolCT/raw/master/images/displayResult-1.png" width="45%" style="float: center" /></a>
+<a href="https://github.com/ithron/ResolCT/raw/master/images/displayResult-2.png"><img alt="Second figure of displayResults" src="https://github.com/ithron/ResolCT/raw/master/images/displayResult-2.png" width="45%" style="float: center" /></a>
+ </p>
 
 ## Lincense
 You may use, distribute and modify this software under the terms of the Academic Free License 3.0 (AFL 3.0).
