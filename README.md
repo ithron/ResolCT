@@ -11,6 +11,11 @@ In the case of this toolbox, the model is a circular slice of an QCT calibration
 The imaging system is approximated by a convolution with a gaussan PSF with unknown scale `sigma`. 
 First radial 1D profiles of an insert in the image are sampled. Since the geometry of the inserts is known, the ideal profiles for a given `sigma` can be computed and compared to the samples from the input image. The optimal parameters are then found by minimization of the negative log likelihood function of the model parameters given the image.  
 
+## Istallation
+
+Clone this repository or download [ResolCT.mltbx](https://github.com/ithron/ResolCT/raw/master/ResolCT.mltbx).
+Open MATLAB and double click *ResolCT.mltbx* to install the toolbox.
+
 ## Usage
 First load your QCT scan into a MATLAB 3D-matrix. Suppose your scan resides in `image` and the resolution of the scan in stores in `resolution`.
 The PSF estimation functions need two additional parameters: the insert radius `radius` and the number of inserts `N` to use for the estimation.
