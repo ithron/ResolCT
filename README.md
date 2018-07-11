@@ -1,6 +1,16 @@
 # ResolCT
 A MATLAB toolbox to estimate in-plane point spread function of QCT scans from calibration phantom inserts.
 
+## Motivation
+The traditional way to measure the in-plane point spread function (PSF) of a CT is by scanning a special phantom. The resulting images are then deconvolved to obtain the PSF \[[1](#Ref1)\]. However, doing such extra scans is tedious task and not always possible.
+Luckily, in QCT a calibration phantom is simultaneously scanned with the patient. So in each QCT scan there is a phantom with known geometry that can be used for PSF estimation.
+
+## Method
+ResolCT is based on a method called *Analysis by Synthesis* (AbS). In AbS we do not analyze the image directly, but instead synthesize images from a model and find the model parameters for which the synthetic and the input image match best.
+In the case of this toolbox, the model is a circular slice of an QCT calibration phantom insert.
+The imaging system is approximated by a convolution with a gaussan PSF with unknown scale `sigma`. 
+First radial 1D profiles of an insert in the image are sampled. Since the geometry of the inserts is known, the ideal profiles for a given `sigma` can be computed and compared to the samples from the input image. The optimal parameters are then found by minimization of the negative log likelihood function of the model parameters given the image.  
+
 ## Usage
 First load your QCT scan into a MATLAB 3D-matrix. Suppose your scan resides in `image` and the resolution of the scan in stores in `resolution`.
 The PSF estimation functions need two additional parameters: the insert radius `radius` and the number of inserts `N` to use for the estimation.
