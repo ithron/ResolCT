@@ -65,6 +65,10 @@ overallSigma = mean(sigmas(~outliers));
 #### Non-interactive
 The same as for the single slice case: just add the centers for any slice as the last parameter.
 
+## Lincense
+You may use, distribute and modify this software under the terms of the Academic Free License 3.0 (AFL 3.0).
+See [LICENSE](https://raw.githubusercontent.com/ithron/ResolCT/master/LICENSE) for full license details.
+
 ## References
 
 \[1\]	[Ohkubo M, Wada S, Ida S, Kunii M, Kayugawa A, Matsumoto T, et al. Determination of point spread function in computed tomography accompanied with verification. Medical Physics. 2009 Jun;36(6):2089–97](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1118/1.3123762)
