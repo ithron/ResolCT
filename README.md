@@ -11,9 +11,9 @@ radius = 9;
 N = 2;
 ```
 
-### Estimatin from Single Slice
+### Estimation from Single Slice
 
-To estimate the PSF from a single slice (e.g. the center slice) of `imgage` use the `estimatePSF` function.
+To estimate the PSF from a single slice (e.g. the center slice) of `image` use the `estimatePSF` function.
 ```matlab
 centerSlice = image(:, :, floor(size(image, 3) / 2));
 [sigma, centers] = estimatePSF(centerSlice, resolution, radius, N);
@@ -28,3 +28,24 @@ The estimation process can also be run non-interactively. Just add the inserts c
 ```matlab
 [sigma, optCenters] = estimatePSF(centerSlice, resolution, radius, N, centers);
 ```
+
+### Estimation from Multiple Slices
+
+To estimate the PSF from multiple slices use the `estimatePSFRange` function.
+For example to estiamte the PSF from the complete scan use:
+```matlab
+[sigmas, allCenters, outliers] = estimatePSFRange(image, resolution, radius, N)
+```
+The function will present the same insert selection as in the single slice case.
+You only have to select the insert centers for a single slice.
+
+Then `sigmas` is an `M` vector (`M` is the number of slices in `image`) containing the estimated scale parameter for each slice separatly. `allCenters` is a `M` cell array containing the Nx2 matrices of the optimized insert centers for each slice.
+Additionally the logical M-vector `outliers` is returned marking the entries of `sigmas` which have been detected as outliers.
+Outliers should either be removed to compute the mean scale parameter or the estimation process should be re-run using the single slice method on the slices corresponding to outliers.
+
+```matlab
+overallSigma = mean(sigmas(~outliers));
+```
+
+#### Non-interactive
+The same as for the single slice case: just add the centers for any slice as the last parameter.
