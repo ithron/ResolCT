@@ -1,6 +1,6 @@
 function displayResults(img, res, radius, centers, sigmaG)
 %DISPLAYRESULTS Visualizes the results of estimatePSF.
-%   displayResults(img, radius, centers, sigmaG) visualizes the result of
+%   displayResults(img, resolution, radius, centers, sigmaG) visualizes the result of
 %   estimatePSF using image img and radius radius. centers and sigmaG are
 %   the outputs of estimatePSF.
 

@@ -11,7 +11,7 @@ The traditional way to measure the in-plane point spread function (PSF) of a CT 
 
 ResolCT is based on a method called Analysis by Synthesis (AbS). In AbS we do not analyze the image directly, but instead synthesize images from a model and find the model parameters for which the synthetic and the input image match best. In the case of this toolbox, the model is a circular slice of an QCT calibration phantom insert. The imaging system is approximated by a convolution with a gaussan PSF with unknown scale sigma. First radial 1D profiles of an insert in the image are sampled. Since the geometry of the inserts is known, the ideal profiles for a given sigma can be computed and compared to the samples from the input image. The optimal parameters are then found by minimization of the negative log likelihood function of the model parameters given the image.</param.description>
     <param.screenshot />
-    <param.version>1.0</param.version>
+    <param.version>1.0.1</param.version>
     <param.output>${PROJECT_ROOT}/ResolCT.mltbx</param.output>
     <param.products.name>
       <item>MATLAB</item>
@@ -40,8 +40,10 @@ ResolCT is based on a method called Analysis by Synthesis (AbS). In AbS we do no
     <param.matlabpath.excludes />
     <param.javaclasspath.excludes />
     <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
       <param.screenshot />
-      <param.version />
       <param.output />
       <param.platforms />
       <param.exclude.filters />
@@ -94,7 +96,7 @@ ResolCT is based on a method called Analysis by Synthesis (AbS). In AbS we do no
       <vista>false</vista>
       <linux>true</linux>
       <solaris>false</solaris>
-      <osver>4.13.0-45-generic</osver>
+      <osver>4.15.0-29-generic</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>glnxa64</arch>
